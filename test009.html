@@ -15,26 +15,9 @@
     if (cmd == 'help') {
       term.echo("available commands are mysql, js, test");
     } else if (cmd == 'test'){
-      term.push(function(cmd, term) {
-        if (command == 'help') {
-          term.echo('type "ping" it will display "pong"');
-        } else if (cmd == 'ping') {
-          term.echo('pong');
-        } else {
-          term.echo('unknown command "' + cmd + '"');
-        }
-      }, {
-        prompt: 'test> ',
-        name: 'test'});
+      term.echo("this is a test");
     } else if (command == "js") {
-      term.push(function(command, term) {
-        var result = window.eval(command);
-        if (result != undefined) {
-          term.echo(String(result));
-        }
-      }, {
-        name: 'js',
-        prompt: 'js> '});
+      term.echo("JAVASCRIPT FTW");
       } else if (command == 'mysql') {
         term.push(function(command, term) {
           term.pause();
