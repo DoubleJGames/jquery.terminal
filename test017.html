@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>JSON-RPC Demo for JQuery Terminal Emulator</title>
+    <title>GSA</title>
     <meta name="author" content="Jakub Jankiewicz - jcubic&#64;onet.pl"/>
     <meta name="Description" content="Demonstration for JQuery Terminal Emulator using call automaticly JSON-RPC service (in php) with authentication."/>
     <script src="../master/js/jquery-1.7.1.min.js"></script>
@@ -17,14 +17,15 @@
     } else if (cmd == 'ls') {
       term.echo("report001.txt, report002.txt, report003.txt");
     } else if (cmd == "more") {
-      term.echo("correct usage: more [filename]");
-      } else if (cmd == 'mysql') {
-       term.echo("sql");
+      //i have no idea what to put here!
+      } else if (cmd == 'exit') {
+       term.echo("");
       }
         }, {
           greetings: "GSA Terminal" });
       
     });
+    
     </script>
   </head>
 <body>
