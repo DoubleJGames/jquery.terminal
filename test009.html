@@ -19,48 +19,9 @@
     } else if (command == "js") {
       term.echo("JAVASCRIPT FTW");
       } else if (command == 'mysql') {
-        term.push(function(command, term) {
-          term.pause();
-          //$.jrpc is helper function which
-          //creates json-rpc request
-          $.jrpc("mysql-rpc-demo.php",
-            "query",
-            [command],
-            function(data) {
-              term.resume();
-              if (data.error) {
-                term.error(data.error.message);
-              } else {
-                if (typeof data.result == 'boolean') {
-                  term.echo(data.result ?
-                            'success' :
-                            'fail');
-                } else {
-                  var len = data.result.length;
-                  for(var i=0;i<len; ++i) {
-                    term.echo(data.result[i].join(' | '));
-                  }
-                }
-              }
-            },
-            function(xhr, status, error) {
-              term.error('[AJAX] ' + status +
-                         ' - Server reponse is: \n' +
-                         xhr.responseText);
-                         term.resume();
-                   }); // rpc call
-          }, {
-            greetings: "This is example of using mysql"+
-              " from terminal\n you are allowed to exe"+
-              "cute: select, insert, update and delete"+
-              " from/to table:\n   table test(integer_"+
-              "value integer, varchar_value varchar(255))",
-            prompt: "mysql> "});
-          } else {
-            term.echo("unknow command " + command);
-          }
+       term.echo("sql");
         }, {
-          greetings: "multiply terminals demo use help"+
+          greetings: This is a test"+
                 " to see available commands"
        });});
     </script>
