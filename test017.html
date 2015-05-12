@@ -13,16 +13,16 @@
     jQuery(function($, undefined) {
      $('html').terminal(function(cmd, term) {
     if (cmd == 'help') {
-      term.echo("available commands are mysql, js, test");
-    } else if (cmd == 'test') {
-      term.echo("this is a test");
-    } else if (cmd == "js") {
-      term.echo("JAVASCRIPT FTW");
+      term.echo("available commands are help, ls, more, exit");
+    } else if (cmd == 'ls') {
+      term.echo("report001.txt, report002.txt, report003.txt");
+    } else if (cmd == "more") {
+      term.echo("correct usage: more [filename]");
       } else if (cmd == 'mysql') {
        term.echo("sql");
       }
         }, {
-          greetings: "This is a test" });
+          greetings: "GSA Terminal" });
       
     });
     </script>
@@ -30,6 +30,7 @@
 <body>
     <!-- Piwik -->
     <script type="text/javascript">
+    /*
       var _paq = _paq || [];
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
@@ -40,6 +41,7 @@
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
         g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
       })();
+      */
     </script>
     <noscript><p><img src="http://piwik.jcubic.pl/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
     <!-- End Piwik Code -->
