@@ -21,7 +21,9 @@
             } catch(e) {
                 term.error(new String(e));
             }
-        } else {
+        } else if (command == 'help') {
+          term.echo("available commands are mysql, js, test")
+       } else {
            term.echo('');
         }
     }, {
