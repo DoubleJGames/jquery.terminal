@@ -11,7 +11,7 @@
     <link href="../master/css/jquery.terminal.css" rel="stylesheet"/>
     <script>
     jQuery(function($, undefined) {
-    $('#term_demo').terminal(function(command, term) {
+    $('body').terminal(function(command, term) {
         if (command !== '') {
             try {
                 var result = window.eval(command);
