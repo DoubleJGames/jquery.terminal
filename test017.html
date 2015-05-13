@@ -20,6 +20,8 @@
       //i have no idea what to put here!
       } else if (cmd == 'exit') {
         initialize();
+      } else if (cmd != '') {
+        term.echo("unrecognised command: " + cmd)
       }
         }, {
           greetings: "Terminal" });
