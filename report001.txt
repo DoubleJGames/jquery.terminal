@@ -1,0 +1,5 @@
+This is a text file to be opened
+
+Hopefully this can display some text
+
+Well this is cool.
