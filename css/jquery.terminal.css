@@ -5,7 +5,7 @@
  * Copyright (c) 2011-2013 Jakub Jankiewicz <http://jcubic.pl>
  *
  */
-.terminal .terminal-output .format, .cmd .format,
+.terminal .terminal-output .format, .cmd .format,v
 .cmd .prompt, .cmd .prompt div, .terminal .terminal-output div div{
     display: inline-block;
 }
@@ -44,7 +44,7 @@
         color: #00FF00;
   }
   50% {
-        background-color: #bbb; /* not #aaa because it's seem there is Google Chrome bug */
+        background-color: #00E600; /* not #aaa because it's seem there is Google Chrome bug */
         color: #000;
   }
 }
@@ -54,7 +54,7 @@
         color: #00FF00;
   }
   50% {
-        background-color: #bbb;
+        background-color: #00E600;
         color: #000;
   }
 }
@@ -64,7 +64,7 @@
         color: #00FF00;
   }
   50% {
-        background-color: #bbb;
+        background-color: #00E600;
         color: #000;
   }
 }
@@ -74,7 +74,7 @@
         color: #00FF00;
   }
   50% {
-        background-color: #bbb;
+        background-color: #00E600;
         color: #000;
   }
 }
