@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>GSA</title>
+    <meta name="author" content="Jakub Jankiewicz - jcubic&#64;onet.pl"/>
+    <meta name="Description" content="Demonstration for JQuery Terminal Emulator using call automaticly JSON-RPC service (in php) with authentication."/>
+    <script src="../master/js/jquery-1.7.1.min.js"></script>
+    <script src="../master/js/jquery.mousewheel-min.js"></script>
+    <script src="../master/js/jquery.terminal-min.js"></script>
+    <link href="../master/css/jquery.terminal.css" rel="stylesheet"/>
+    <script>
+
+    jQuery(function($, undefined) {
+     $('html').terminal(function(cmd, term) {
+    if (cmd == 'help') {
+      term.echo("available commands are help, ls, file, exit");
+    } else if (cmd == 'ls') {
+      term.echo("report001.txt, report002.txt, report003.txt");
+    } var c = $.terminal.splitCommand(cmd);
+if (c.name == "more") {
+   term.pause();
+     var export_data = term.export_view();
+     $.get(c.args[0], function(file) {
+        var i = 0;
+        var lines = file.split('\n');
+        term.clear().echo(lines.slice(i, i+term.rows()).join('\n'));
+        term.push($.noop, {
+            keydown: function(e) {
+                if (e.which == 32) {
+                    i++;
+                    term.clear().echo(lines.slice(i, i+term.rows()).join('\n'));
+                } else if (e.which == 27) {
+                    term.pop().import_view(export_data).resume();
+                }
+                return false;
+            }
+        });
+
+     });
+    } else if (cmd == "more report001") {
+      term.echo("REPORT 1. OK COOL")
+    } else if (cmd == "exit") {
+				  $('#destri').click(initialize);
+			} else if (cmd != '') {
+        term.echo("'" + cmd+ "'" + " is not a recognised command");
+      }
+        }, {
+          greetings: "Terminal" });
+      
+    });
+     
+    function initialize() {
+       window.alert('test');
+     }
+     
+    </script>
+  </head>
+<body>
+    <!-- Piwik -->
+    <script type="text/javascript">
+    /*
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.jcubic.pl/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 1]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+        g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+      */
+    </script>
+    <noscript><p><img src="http://piwik.jcubic.pl/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+</body>
+</html>
