@@ -19,8 +19,7 @@
       term.echo("report001.txt, report002.txt, report003.txt");
     } var c = $.terminal.splitCommand(cmd);
 if (c.name == "more") {
-   term.pause();
-     var export_data = term.export_view();
+  var export_data = term.export_view();
      $.get(c.args[0], function(file) {
         var i = 0;
         var lines = file.split('\n');
@@ -31,7 +30,7 @@ if (c.name == "more") {
                     i++;
                     term.clear().echo(lines.slice(i, i+term.rows()).join('\n'));
                 } else if (e.which == 27) {
-                    term.pop().import_view(export_data).resume();
+                    term.pop().import_view(export_data);
                 }
                 return false;
             }
