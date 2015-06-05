@@ -10,7 +10,15 @@
     <script src="../master/js/jquery.terminal-min.js"></script>
     <link href="../master/css/jquery.terminal.css" rel="stylesheet"/>
     <script>
-
+//resize terminal
+	var terminal = $('...').terminal(...);
+	var $win = $(window);
+	$win.resize(function() {
+	    var height = $win.height();
+	     terminal.innerHeight(height);
+		 }).resize();
+	 terminal.resize();
+//end resize terminal
     jQuery(function($, undefined) {
      $('html').terminal(function(cmd, term) {
     if (cmd == 'help') {
